@@ -1,0 +1,63 @@
+<div  class="carousel-item active"  style="background-color: rgb(187, 217, 228);"  >
+<div  class="container col-md-6" >
+  <h1 style="color:  black;" >Tourist Registration Page</h1>
+  <form #userform="ngForm" [formGroup]="form1"  (ngSubmit)="userRegister()">
+    <div class="mb-3">
+      <label class="form-label">Id</label>
+      <input type="int" formControlName="tid"   class="form-control" id="tid" name="tid" [(ngModel)]="user.tid"  >
+    <span *ngIf="f['tid'].errors && f['tid'].errors['required'] " class="error"> Id required</span>
+    <span *ngIf="f['tid'].errors && f['tid'].errors['maxlength'] " class="error"> Id Maxlength</span>
+      </div>
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input type="text"  formControlName="firstname"  class="form-control" id="First name" name="First name" placeholder="eg:Vikram" [(ngModel)]="user.firstname" >
+      <span *ngIf="f['firstname'].errors && f['firstname'].errors['required'] " class="error">  required</span>
+      <span *ngIf="f['firstname'].errors && f['firstname'].errors['maxlength'] " class="error"> should be less than 15 characters</span>
+      </div>
+    <div class="mb-3">
+      <label class="form-label">Last Name</label>
+      <input type="text"  formControlName="lastname" class="form-control" id="Lastname" name="Lastname" placeholder="eg:kumar" [(ngModel)]="user.lastname">
+      <span *ngIf="f['lastname'].errors && f['lastname'].errors['required'] " class="error">  required</span>
+      <span *ngIf="f['lastname'].errors && f['lastname'].errors['maxlength'] " class="error"> should be less than 12 characters</span>
+    </div>
+    <div class="mb-3">
+      <label  >Age</label>
+      <input type="number" formControlName="age" class="form-control" id="age" name ="age" placeholder="15" [(ngModel)]="user.age">
+      <span *ngIf="f['age'].errors && f['age'].errors['required'] " class="error"> Age Requried</span>
+      <span *ngIf="f['age'].errors && f['age'].errors['pattern'] " class="error"> Maximum of 90 years</span>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">Gender</label>
+      <div class="form-check">
+        <input class="form-check-input" [ngModelOptions]="{standalone: true}" type="radio" name="gender" id="Male" value="Male"  [(ngModel)]="user.gender">
+        <label class="form-check-label" for="gender">
+          Male
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" [ngModelOptions]="{standalone: true}" type="radio" name="gender" id="female" value="female" [(ngModel)]="user.gender">
+        <label class="form-check-label" for="gender">
+          Female
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label  class="form-label">From Place</label>
+      <input type="string"  formControlName="fplace" class="form-control" id="fplace"  name="fplace" placeholder="eg:Hyderabad"  [(ngModel)]="user.fplace">
+      <span *ngIf="f['fplace'].errors && f['fplace'].errors['required'] " class="error"> From palce required</span>
+      <span *ngIf="f['fplace'].errors && f['fplace'].errors['pattern'] " class="error"> From place should be text</span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">No of days Visited</label>
+      <input type="int"  formControlName="nodv" class="form-control" id="nodv" name="nodv" placeholder="12" [(ngModel)]="user.nodv">
+      <span *ngIf="f['nodv'].errors && f['nodv'].errors['required'] " class="error"> No of days Requried</span>
+      <span *ngIf="f['nodv'].errors && f['nodv'].errors['pattern'] " class="error"> should be numeric</span>
+    </div>
+    <button>
+      <div class="col-12">
+        <button type="button" class="btn btn-primary"[disabled]="userform.invalid" type="submit" class="success" (click)="register()"> Register </button>
+      </div>
+    </button>
+  </form>
+</div>
+</div>
