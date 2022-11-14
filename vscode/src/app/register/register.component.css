@@ -1,0 +1,15 @@
+.bg{
+    background-image: url(https://images.unsplash.com/photo-1534001265532-393289eb8ed3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80);
+    height: 100px;
+}
+.error{
+    color: red;
+}
+input.ng-valid{
+    border-left:5px solid skyblue;
+    color:black;
+}
+input.ng-invalid{
+    border-left:5px solid red;
+    color:green;
+}

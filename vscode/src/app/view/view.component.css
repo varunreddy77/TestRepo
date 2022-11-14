@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+  
+  th.mat-sort-header-sorted {
+    color: black;
+    background-color: aqua;
+  }
+  .mat-row .mat-cell {
+    border-bottom: 0.5px solid black;
+    border-top: 0.5px solid black;
+    cursor: pointer;
+  }
+  .mat-row:hover .mat-cell {
+    border-color: black;
+  }
+  
+  .demo-row-is-clicked {
+    font-weight: bold;
+  }
+ 
